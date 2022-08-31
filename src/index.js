@@ -9,11 +9,13 @@ $(document).ready(function() {
   $('#roll').click(function() {
     const currentState = stateControl(); 
     if (currentState.turn <= 8 && currentState.willToLive > 0) {
-       roll();
-    }
+       const newState = roll();
+    } 
     $('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
+    $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
+    $('#turn').text(`Turn: ${newState.turn}`)
   });
-
+  
 });
 
 
