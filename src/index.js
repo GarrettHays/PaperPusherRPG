@@ -9,11 +9,18 @@ $(document).ready(function() {
   $('#roll').click(function() {
     const currentState = stateControl(); 
     if (currentState.turn < 8 && currentState.willToLive > 0) {
-       const newState = roll();
-       $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
-       $('#turn').text(`Turn: ${newState.turn}`)
+      const newState = roll();
+      if(newState.willToLive < 0) {
+        $('#gameStatus').text(`You lose.`);
+      } else {
+        if(newState.turn === 8) {
+          $('#gameStatus').text(`Congratulation! You Survived.`);
+        }
+      }
+      $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
+      $('#turn').text(`Turn: ${newState.turn}`)
     } 
-    //$('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
+    // $('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
   });
   
 });
