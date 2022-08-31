@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,31 +9,50 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-devtool: 'eval-source-map',  
-devServer: {                 
-  contentBase: './dist'      
-},
-plugins: [
-  new CleanWebpackPlugin(),
-  new HtmlWebpackPlugin({
-      title: 'Template',
+  devtool: 'eval-source-map',  
+  devServer: {                 
+    contentBase: './dist'      
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Power Plant',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
           'style-loader',
           'css-loader'
         ]
       },
       {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "eslint-loader"
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.(gif|png|avif|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
+      },
+      {
+        test:/\.html$/i,
+        use: [
+          'html-loader'
+        ]
       }
     ]
   }
