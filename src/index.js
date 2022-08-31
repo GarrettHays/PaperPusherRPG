@@ -27,7 +27,7 @@ $(document).ready(function() {
         }
       }
       $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
-      $('#turn').text(`Turn: ${newState.turn}`)
+      $('#turn').text(`Hours Worked: ${newState.turn}`)
     } 
     // $('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
   });

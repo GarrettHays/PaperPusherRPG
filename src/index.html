@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Left4Dead Office</title>
 </head>
-<body>
-  <h1>Go to Work</h1>
-  <hr />
-  <div class="container">
-    <button class="btn-success" id="roll">Roll</button>
-  </div>
-  <h1>Results</h1>
-  <hr />
-  <div class="container">
-    <!-- <h3><div id="show-state"></div></h3> -->
-    <h3><div id="willToLive"></div></h3>
-    <h3><div id="turn"></div></h3>
-    <h3><div id="gameStatus"></div></h3>
-    <button class="btn-success" type="submit" id="playAgain">Play Again</button>
-  </div>
 
+<body>
+  <div class="parent-container">
+    <div class="header-container">
+      <div class="header">
+        <img src = "img/PAPER-PUSHER_4.png">
+      </div>
+    </div>
+
+    <div class="results-container">
+      <div class="willToLiveContainer">
+        <h3>
+          <div id="willToLive"></div>
+        </h3>
+      </div>
+      <div class="timeContainer">
+        <h3>
+          <div id="turn"></div>
+        </h3>
+      </div>
+    </div>
+
+    <div class="heroContainer">
+      <div class="employeeContainer">
+        <img src = "img/finalworker.png">
+      </div>
+      <div class="diceContainer">
+        <img src = "img/finalworker.png">
+      </div>
+    </div>
+
+
+    <div class="statusContainerParent">
+      <div class="statusContainer">
+        <h3>
+          <div id="gameStatus"></div>
+        </h3>
+        <button class="btn-success" type="submit" id="playAgain">Play Again</button>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="btn-success" id="roll">Roll</button>
+    </div>
+  </div>
 </body>
+
 </html>
