@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Power Plant',
+      title: 'Left4Dead Office',
       template: './src/index.html',
       inject: 'body'
     }),
