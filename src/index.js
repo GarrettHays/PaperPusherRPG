@@ -4,6 +4,13 @@ import './css/styles.css';
 import $ from 'jquery';
 import { stateControl, roll } from './js/game';
 
+
+const playAgain = () => {
+  $('#playAgain').show().click(function() {
+    location.reload();
+  });
+};
+
 $(document).ready(function() {
 
   $('#roll').click(function() {
@@ -12,9 +19,11 @@ $(document).ready(function() {
       const newState = roll();
       if(newState.willToLive < 0) {
         $('#gameStatus').text(`You lose.`);
+        playAgain();
       } else {
         if(newState.turn === 8) {
           $('#gameStatus').text(`Congratulation! You Survived.`);
+          playAgain();
         }
       }
       $('#willToLive').text(`Will to Live: ${newState.willToLive}`)

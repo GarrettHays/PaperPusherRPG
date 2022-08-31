@@ -4,3 +4,7 @@
   background-color: var(--bs-light);
   border-radius: .3rem;  
 }
+
+#playAgain {
+  display: none;
+}
