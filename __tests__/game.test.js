@@ -37,9 +37,7 @@ describe('game', () => {
   });
 
   test('turn increase 1 by roll', () => {
-    const newState = stateControl();
-    roll();
-    //console.log(rollNum);
+    const newState = roll();
     expect(newState.turn).toEqual(1);
   });
 
