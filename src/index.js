@@ -17,7 +17,7 @@ $(document).ready(function() {
     const currentState = stateControl(); 
     if (currentState.turn < 8 && currentState.willToLive > 0) {
       const newState = roll();
-      if(newState.willToLive < 0) {
+      if(newState.willToLive <= 0) {
         $('#gameStatus').text(`You lose.`);
         playAgain();
       } else {
