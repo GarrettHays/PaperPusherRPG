@@ -34,7 +34,7 @@ export const report = changeState("willToLive")(-3);
 export const turn = changeState("turn")(+1);
 
 export const roll = () => {
-  let rollNum = Math.trunc(Math.random() * 6) + 1;
+  const rollNum = Math.trunc(Math.random() * 6) + 1;
   stateControl(turn);
   switch (rollNum) {
     case 1:
