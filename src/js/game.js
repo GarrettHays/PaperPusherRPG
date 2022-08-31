@@ -34,21 +34,20 @@ export const report = changeState("willToLive")(-3);
 export const turn = changeState("turn")(+1);
 
 export const roll = () => {
-  let rollNum = Math.trunc(Math.random() * 6) + 1;
-  turn;
-  switch (rollNum)
-      {
-        case 1:
-          return longLunch;
-        case 3:
-          return payDay;
-        case 5:
-          return coffee;
-        case 2:
-          return clientCall;
-        case 4:
-          return dataEntry;
-        case 6:
-          return report;
-    }
-}
+  const rollNum = Math.trunc(Math.random() * 6) + 1;
+  stateControl(turn);
+  switch (rollNum) {
+    case 1:
+      return stateControl(longLunch);
+    case 3:
+      return stateControl(payDay);
+    case 5:
+      return stateControl(coffee);
+    case 2:
+      return stateControl(clientCall);
+    case 4:
+      return stateControl(dataEntry);
+    case 6:
+      return stateControl(report);
+  }
+};

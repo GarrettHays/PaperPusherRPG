@@ -4,16 +4,34 @@ import './css/styles.css';
 import $ from 'jquery';
 import { stateControl, roll } from './js/game';
 
+
+const playAgain = () => {
+  $('#playAgain').show().click(function() {
+    location.reload();
+  });
+};
+
 $(document).ready(function() {
 
   $('#roll').click(function() {
     const currentState = stateControl(); 
-    if (currentState.turn <= 8 && currentState.willToLive > 0) {
-       roll();
-    }
-    $('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
+    if (currentState.turn < 8 && currentState.willToLive > 0) {
+      const newState = roll();
+      if(newState.willToLive <= 0) {
+        $('#gameStatus').text(`You lose.`);
+        playAgain();
+      } else {
+        if(newState.turn === 8) {
+          $('#gameStatus').text(`Congratulation! You Survived.`);
+          playAgain();
+        }
+      }
+      $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
+      $('#turn').text(`Turn: ${newState.turn}`)
+    } 
+    // $('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
   });
-
+  
 });
 
 
