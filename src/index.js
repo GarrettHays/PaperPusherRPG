@@ -8,12 +8,12 @@ $(document).ready(function() {
 
   $('#roll').click(function() {
     const currentState = stateControl(); 
-    if (currentState.turn <= 8 && currentState.willToLive > 0) {
+    if (currentState.turn < 8 && currentState.willToLive > 0) {
        const newState = roll();
+       $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
+       $('#turn').text(`Turn: ${newState.turn}`)
     } 
-    $('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
-    $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
-    $('#turn').text(`Turn: ${newState.turn}`)
+    //$('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
   });
   
 });
