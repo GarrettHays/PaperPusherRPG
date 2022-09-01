@@ -41,7 +41,7 @@ $(document).ready(function() {
         $('.diceToggle5').hide();
         $('.diceToggle6').hide();
         $('.diceToggle2').show();
-        $('#eventStatus').text(`You rolled a 2: Scheduled for an aimless client call. Will to live decreased by 1!`);
+        $('#eventStatus').text(`You rolled a 2: Skipped an aimless client call. Will to live decreased by 1!`);
       } else if(newState.willToLive-currentState.willToLive === 3) {
         $('.diceContainerimg').hide();
         $('.diceToggle1').hide();
@@ -50,7 +50,7 @@ $(document).ready(function() {
         $('.diceToggle5').hide();
         $('.diceToggle6').hide();
         $('.diceToggle3').show();
-        $('#eventStatus').text(`You rolled a 3: It's PAYDAY! Will to live incresed by 3!`);
+        $('#eventStatus').text(`You rolled a 3: Your boss gives you praise! Will to live incresed by 3!`);
       } else if(newState.willToLive-currentState.willToLive === -2) {
         $('.diceContainerimg').hide();
         $('.diceToggle1').hide();
@@ -59,7 +59,7 @@ $(document).ready(function() {
         $('.diceToggle5').hide();
         $('.diceToggle6').hide();
         $('.diceToggle4').show();
-        $('#eventStatus').text(`You rolled a 4: Assigned manual data entry responsibilities. Will to live decreased by 2!`);
+        $('#eventStatus').text(`You rolled a 4: Fudged up your manual data entry tasks. Will to live decreased by 2!`);
       } else if(newState.willToLive-currentState.willToLive === 1) {
         $('.diceContainerimg').hide();
         $('.diceToggle1').hide();
@@ -77,16 +77,20 @@ $(document).ready(function() {
         $('.diceToggle4').hide();
         $('.diceToggle5').hide();
         $('.diceToggle6').show();
-        $('#eventStatus').text(`You rolled a 6: Quarterly Business Reports are due. Will to live decreased by 3!`);
+        $('#eventStatus').text(`You rolled a 6: Forgot the Quarterly Business Reports were due. Will to live decreased by 3!`);
       }
       if (newState.willToLive <= 0) {
         $('#roll').hide();
-        $('#gameStatus').text(`You lose.`);
+        $('#gameStatus').text(`YOU'RE FIRED!`);
+        $('#gameStatus2').text(`You lasted ${newState.turn} hours before being asked to leave.`);
+        $('#gameStatus3').text(`Better luck next time.`);
         playAgain();
        } else {
         if(newState.turn === 8) {
           $('#roll').hide();
-          $('#gameStatus').text(`Congratulation! You Survived.`);
+          $('#gameStatus').text(`HAPPY HOUR!`);
+          $('#gameStatus2').text(`You Survived another day.`);
+          $('#gameStatus3').text(`See you tomorrow!`);
           playAgain();
         }
       }

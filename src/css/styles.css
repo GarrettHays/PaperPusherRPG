@@ -14,6 +14,11 @@
   text-align: center;
 }
 
+.header img{
+  width: 1200px;
+  height: auto;
+}
+
 .jumbotron {
   padding: 4rem 2rem;
   margin-bottom: 2rem;
@@ -38,7 +43,7 @@
   height: 200px;
   margin-right: 80px;
   text-align: center;
-  padding-top: 55px;
+  padding-top: 40px;
 }
 
 
@@ -46,7 +51,7 @@
   width: 445px;
   height: 200px;
   margin-left: 75px;
-  padding-top: 55px;
+  padding-top: 40px;
   text-align: center;
 }
 
@@ -67,7 +72,7 @@
 }
 
 .employeeContainer img {
-  width: 300px;
+  width: 400px;
   height: auto;
 }
 
@@ -87,7 +92,7 @@
   margin-top: 50px;
   font-family: 'Press Start 2p';
   height: 200px;
-  width: 450px;
+  width: 500px;
   padding-top: 55px;
   text-align: center;
 }
@@ -95,7 +100,7 @@
 .button-container {
   font-family: 'Press Start 2p';
   text-shadow: 2px 2px 2px lightgray;
-  margin-top: 20px;
+  margin-top: -130px;
   width: 100%;
   position: fixed;
   text-align: center;
@@ -108,8 +113,6 @@
 .btn-success:hover {
   background-color: #5dc3da;
 }
-
-.btn-success:
 
 .diceToggle1 {
   display: none;

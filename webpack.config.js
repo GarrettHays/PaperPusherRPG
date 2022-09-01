@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Left4Dead Office',
+      title: 'Paper Pusher RPG',
       template: './src/index.html',
       inject: 'body'
     }),
