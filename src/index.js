@@ -11,28 +11,92 @@ const playAgain = () => {
   });
 };
 
-$(document).ready(function() {
 
+
+$(document).ready(function() {
+  $('.diceToggle2').hide();
+  $('.diceToggle3').hide();
+  $('.diceToggle4').hide();
+  $('.diceToggle5').hide();
+  $('.diceToggle6').hide();
+  $('.diceToggle1').hide();
   $('#roll').click(function() {
     const currentState = stateControl(); 
     if (currentState.turn < 8 && currentState.willToLive > 0) {
       const newState = roll();
-      if(newState.willToLive <= 0) {
+      if(newState.willToLive-currentState.willToLive === 2) {
+        $('.diceContainerimg').hide();
+        $('.diceToggle2').hide();
+        $('.diceToggle3').hide();
+        $('.diceToggle4').hide();
+        $('.diceToggle5').hide();
+        $('.diceToggle6').hide();
+        $('.diceToggle1').show();
+        $('#eventStatus').text(`You rolled a 1: Took a long lunch! Will to live incresed by 2!`);
+      } else if(newState.willToLive-currentState.willToLive === -1) {
+        $('.diceContainerimg').hide();
+        $('.diceToggle1').hide();
+        $('.diceToggle3').hide();
+        $('.diceToggle4').hide();
+        $('.diceToggle5').hide();
+        $('.diceToggle6').hide();
+        $('.diceToggle2').show();
+        $('#eventStatus').text(`You rolled a 2: Scheduled for an aimless client call. Will to live decreased by 1!`);
+      } else if(newState.willToLive-currentState.willToLive === 3) {
+        $('.diceContainerimg').hide();
+        $('.diceToggle1').hide();
+        $('.diceToggle2').hide();
+        $('.diceToggle4').hide();
+        $('.diceToggle5').hide();
+        $('.diceToggle6').hide();
+        $('.diceToggle3').show();
+        $('#eventStatus').text(`You rolled a 3: It's PAYDAY! Will to live incresed by 3!`);
+      } else if(newState.willToLive-currentState.willToLive === -2) {
+        $('.diceContainerimg').hide();
+        $('.diceToggle1').hide();
+        $('.diceToggle2').hide();
+        $('.diceToggle3').hide();
+        $('.diceToggle5').hide();
+        $('.diceToggle6').hide();
+        $('.diceToggle4').show();
+        $('#eventStatus').text(`You rolled a 4: Assigned manual data entry responsibilities. Will to live decreased by 2!`);
+      } else if(newState.willToLive-currentState.willToLive === 1) {
+        $('.diceContainerimg').hide();
+        $('.diceToggle1').hide();
+        $('.diceToggle2').hide();
+        $('.diceToggle3').hide();
+        $('.diceToggle4').hide();
+        $('.diceToggle6').hide();
+        $('.diceToggle5').show();
+        $('#eventStatus').text(`You rolled a 5: A fresh pot of coffee in the break room! Will to live incresed by 1!`);
+      } else if(newState.willToLive-currentState.willToLive === - 3){
+        $('.diceContainerimg').hide();
+        $('.diceToggle1').hide();
+        $('.diceToggle2').hide();
+        $('.diceToggle3').hide();
+        $('.diceToggle4').hide();
+        $('.diceToggle5').hide();
+        $('.diceToggle6').show();
+        $('#eventStatus').text(`You rolled a 6: Quarterly Business Reports are due. Will to live decreased by 3!`);
+      }
+      if (newState.willToLive <= 0) {
+        $('#roll').hide();
         $('#gameStatus').text(`You lose.`);
         playAgain();
-      } else {
+       } else {
         if(newState.turn === 8) {
+          $('#roll').hide();
           $('#gameStatus').text(`Congratulation! You Survived.`);
           playAgain();
         }
       }
-      $('#willToLive').text(`Will to Live: ${newState.willToLive}`)
-      $('#turn').text(`Hours Worked: ${newState.turn}`)
+      $('#willToLive').text(`${newState.willToLive}`)
+      $('#turn').text(`${newState.turn}`)
     } 
-    // $('#show-state').text(`Will to Live: ${currentState.willToLive}, Turns: ${currentState.turn}`);
   });
-  
 });
+  
+
 
 
 

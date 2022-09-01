@@ -25,8 +25,8 @@ const changeState = (prop) => {
   };
 };
 
-export const longLunch = changeState("willToLive")(+1);
-export const payDay = changeState("willToLive")(+2);
+export const longLunch = changeState("willToLive")(+2);
+export const payDay = changeState("willToLive")(+3);
 export const coffee = changeState("willToLive")(+1);
 export const clientCall = changeState("willToLive")(-1);
 export const dataEntry = changeState("willToLive")(-2);

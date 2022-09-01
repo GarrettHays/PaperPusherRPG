@@ -12,7 +12,6 @@
 
   font-family: 'Press Start 2p';
   text-align: center;
-  /* border: solid 2px; */
 }
 
 .jumbotron {
@@ -28,24 +27,23 @@
 
 .results-container {
   font-family: 'Press Start 2p';
+  text-shadow: 2px 2px 2px lightgray;
   margin-top: 100px;
   display: flex;
   justify-content: center;
 }
 
 .willToLiveContainer {
-  border: solid 2px black;
-  width: 350px;
+  width: 445px;
   height: 200px;
-  margin-right: 75px;
+  margin-right: 80px;
   text-align: center;
   padding-top: 55px;
 }
 
 
 .timeContainer {
-  border: solid 2px black;
-  width: 350px;
+  width: 445px;
   height: 200px;
   margin-left: 75px;
   padding-top: 55px;
@@ -53,30 +51,31 @@
 }
 
 .heroContainer {
+  font-family: 'Press Start 2p';
+  text-shadow: 2px 2px 2px lightgray;
   display: flex;
-  justify-content: center;
+  justify-content:center;
+  align-items: center;
+  margin-top: 50px;
+  height: 300px;
 }
 
+.eventContainer {
+  width: 350px;
+  height: 200px;
+  margin-right: 50px;
+}
 
 .employeeContainer img {
-  padding-top: 50px;
-  margin-right: 100px;
   width: 300px;
   height: auto;
 }
 
-/* .diceParentContainer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: right;
-  padding-right: 150px;
-} */
-
-.diceContainer img {
-  padding-top: 50px;
-  margin-left: 100px;
-  width: 300px;
+.diceContainerimg {
+  width: 200px;
   height: auto;
+  margin-left: 80px;
+  margin-right: 130px;
 }
 
 .statusContainerParent {
@@ -87,7 +86,6 @@
 .statusContainer {
   margin-top: 50px;
   font-family: 'Press Start 2p';
-  border: solid 2px black;
   height: 200px;
   width: 450px;
   padding-top: 55px;
@@ -96,8 +94,63 @@
 
 .button-container {
   font-family: 'Press Start 2p';
+  text-shadow: 2px 2px 2px lightgray;
   margin-top: 20px;
   width: 100%;
   position: fixed;
   text-align: center;
+}
+
+.btn-success {
+  background-color: black;
+}
+
+.btn-success:hover {
+  background-color: #5dc3da;
+}
+
+.btn-success:
+
+.diceToggle1 {
+  display: none;
+  width: 200px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 130px;
+}
+
+.diceToggle2 {
+  display: none;
+  width: 200px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 130px;
+}
+.diceToggle3 {
+  display: none;
+  width: 200px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 130px;
+}
+.diceToggle4 {
+  display: none;
+  width: 200px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 130px;
+}
+.diceToggle5 {
+  display: none;
+  width: 200px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 130px;
+}
+.diceToggle6 {
+  display: none;
+  width: 200px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 130px;
 }
