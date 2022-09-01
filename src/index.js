@@ -25,12 +25,12 @@ $(document).ready(function() {
     if (currentState.turn < 8 && currentState.willToLive > 0) {
       const newState = roll();
       if(newState.willToLive-currentState.willToLive === 2) {
-        $('.diceContainerimg').hide();
         $('.diceToggle2').hide();
         $('.diceToggle3').hide();
         $('.diceToggle4').hide();
         $('.diceToggle5').hide();
         $('.diceToggle6').hide();
+        $('.diceContainerimg').hide();
         $('.diceToggle1').show();
         $('#eventStatus').text(`You rolled a 1: Took a long lunch! Will to live incresed by 2!`);
       } else if(newState.willToLive-currentState.willToLive === -1) {
